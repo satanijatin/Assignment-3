@@ -1,0 +1,23 @@
+The django-admin.py make messages command is used for internationalization (i18n) and localization (l10n) in Django projects.
+
+When you're building a web application that you intend to make available in multiple languages, it's essential to provide support for translating text strings into different languages. Django's internationalization framework allows you to mark strings in your Python code and templates as translatable and then provides tools for generating translation files for different languages.
+
+Here's how the django-admin.py make messages command fits into this process:
+
+Marking Strings for Translation: In your Django project, you can mark strings that need to be translated by wrapping them with translation functions or template tags. For example, in Python code, you would use the gettext() function like this:
+
+
+from django.utils.translation import gettext as _
+
+message = _("Hello, world!")
+
+
+{% load i18n %}
+<p>{% trans "Hello, world!" %}</p>
+
+Generating Translation Files: After marking the strings, you use the django-admin.py makemessages command to generate translation files for the marked strings. This command scans your project's code and templates, extracts the translatable strings, and creates or updates the corresponding translation files.
+
+Translating Strings: Once the translation files are generated, translators can translate the strings into different languages. These translations are added to the translation files.
+
+Compiling Translations: Finally, you use the django-admin.py compilemessages command to compile the translation files into binary message files (.mo files) that Django can use at runtime. This step is necessary for Django to be able to serve translated content.	
+
