@@ -1,0 +1,10 @@
+
+To load data into a Django project, you can use the manage.py loaddata command. This command allows you to load data from fixture files into your database. Fixture files are JSON, XML, or YAML files that contain serialized data for your Django models.
+
+
+python manage.py loaddata <fixture_name>
+
+Replace <fixture_name> with the name of your fixture file (without the file extension). By default, Django looks for fixture files in the fixtures directory inside each app of your project.
+
+
+python manage.py loaddata initial_data
